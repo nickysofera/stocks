@@ -11,8 +11,8 @@ class mahasiswa extends Model
     'mahasiswa_first_name',
     'mahasiswa_last_name',
     'mahasiswa_no_hp_email',
-    'checkbox',
-    'dropdown'
+    'mahasiswa_gender',
+    // 'dropdown'
     ];
 
 }

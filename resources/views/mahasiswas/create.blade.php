@@ -18,10 +18,9 @@
               <li>{{ $error }}</li>
             @endforeach
         </ul>
-      </div><br />
+      </div><br/>
     @endif
       <form method="post" action="{{ route('mhs.store') }}">
-      <form method="post" action="{{url('mhs')}}">
           <div class="form-group">
               @csrf
               <label for="first_name">First Name:</label>
@@ -35,24 +34,26 @@
               <label for="no_hp_email">No.Hp or Email:</label>
               <input type="text" class="form-control" name="mahasiswa_no_hp_email"/>
           </div>
-          <lable>Pria</lable>
-                   <input type="checkbox" name="checkbox" value="Pria">
-          <lable>Wanita</lable>
-                     <input type="checkbox" name="checkbox" value="Wanita">
-            </div>
-            <lable>Agama</lable>
+          <div class="form-group">
+              <label for="Gender">Jenis Kelamin :</label>
+              <!-- <label>Pria</label> -->
+              <input type="radio" name="gender" value="pria"> Pria
+              <!-- <label>Wanita</label> -->
+              <input type="radio" name="gender" value="wanita"> Wanita <br>
+          </div>
+          <!-- <div class="form-group">  
+            <label>Agama</label>
                 <select name="dropdown">
                   <option value="Islam">Islam</option>
                   <option value="Kristen">Kristen</option>
                   <option value="Buddha">Buddha</option>  
                 </select>
-            </div>
-        </div>
+          </div> -->
          <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4" style="margin-left:38px">
           </div>
-          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
       </form>
   </div>
 </div>

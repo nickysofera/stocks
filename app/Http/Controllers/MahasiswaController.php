@@ -42,14 +42,15 @@ class MahasiswaController extends Controller
             'mahasiswa_last_name'=> 'required|string',
             'mahasiswa_no_hp_email' => 'required|string'
           ]);
+        // dd($request);
           $mahasiswa = new Mahasiswa([
             'mahasiswa_first_name' => $request->get('mahasiswa_first_name'),
             'mahasiswa_last_name'=> $request->get('mahasiswa_last_name'),
             'mahasiswa_no_hp_email'=> $request->get('mahasiswa_no_hp_email'),
-            $checkbox = implode(",", $request->get('option'));
-            $mahasiswa->dropdown=$request->get('dropdown');
-            $mahasiswa->checkbox = $checkbox; 
+            'mahasiswa_gender'=> $request->get('gender')
           ]);
+        //   dd($mahasiswa);
+
           $mahasiswa->save();
           return redirect('/mhs')->with('success', 'Mahasiswa has been added');
     }
@@ -73,7 +74,8 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mahasiswa = Mahasiswa::find($id);
+        return view('mahasiswas.edit',compact('mahasiswa','id'));
     }
 
     /**
@@ -88,15 +90,15 @@ class MahasiswaController extends Controller
         $request->validate([
             'first_name'=>'required',
             'last_name'=> 'required|string',
-            'no_hp_email' => 'required|string',
-            'jenis_kelamin'=> 'requred|srting'
+            'no_hp_email' => 'required|string'
           ]);
     
           $mahasiswa = Mahasiswa::find($id);
           $mahasiswa->mahasiswa_first_name = $request->get('mahasiswa_first_name');
           $mahasiswa->mahasiswa_last_name = $request->get('mahasiswa_last_name');
           $mahasiswa->mahasiswa_no_hp_email = $request->get('mahasiswa_no_hp_email');
-          $mahasiswa->mahasiswa_jenis_kelamin = $request->get('mahasiswa_jenis_kelamin');
+          // $mahasiswa->dropdown=$request->get('dropdown');
+          $mahasiswa->radio = $request->get('radio');
           $mahasiswa->save();
     
           return redirect('/mhs')->with('success', 'Mahasiswa has been updated');

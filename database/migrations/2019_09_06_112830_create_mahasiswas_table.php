@@ -18,9 +18,8 @@ class CreateMahasiswasTable extends Migration
             $table->string('mahasiswa_first_name');
             $table->string('mahasiswa_last_name');
             $table->string('mahasiswa_no_hp_email');
-            $table->string('radio');
-            $table->string('checkbox');
-            $table->string('dropdown');
+            $table->enum('mahasiswa_gender', ['pria', 'wanita'])->nullable();
+            // $table->string('dropdown');
             $table->timestamps();
         });
     }

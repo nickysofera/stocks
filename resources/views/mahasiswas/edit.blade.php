@@ -37,10 +37,6 @@
           <input type="text" class="form-control" name="no_hp_email" value={{ $mahasiswa->mahasiswa_no_hp_email }} />
         </div>
         </div>
-        <div class="form-group">
-          <label for="jenis_kelamin">Jenis Kelamin:</label>
-          <input type="text" class="form-control" name="jenis_kelamin" value={{ $mahasiswa->mahasiswa_jenis_kelamin }} />
-        </div>
         <button type="submit" class="btn btn-primary">Update</button>
       </form>
   </div>

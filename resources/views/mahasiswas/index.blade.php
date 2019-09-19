@@ -30,7 +30,7 @@
             <td>{{$mahasiswa->mahasiswa_first_name}}</td>
             <td>{{$mahasiswa->mahasiswa_last_name}}</td>
             <td>{{$mahasiswa->mahasiswa_no_hp_email}}</td>
-            <td>{{$mahasiswa->mahasiswa_jenis_kelamin}}</td>
+            <td>{{$mahasiswa->mahasiswa_gender}}</td>
             <td><a href="{{ route('mhs.edit',$mahasiswa->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
                 <form action="{{ route('mhs.destroy', $mahasiswa->id)}}" method="post">
